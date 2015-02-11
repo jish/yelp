@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             println(businesses[0])
 
             let restaurants = map(businesses) { (business) -> Restaurant in
-                return Restaurant(name: business["name"] as String)
+                return Restaurant(dictionary: business as NSDictionary)
             }
 
             self.restaurants = restaurants
@@ -44,7 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCellWithIdentifier("restaurant-cell") as RestaurantTableViewCell
         let restaurant = restaurants[indexPath.row] as Restaurant
         
-        cell.setRestaurant(restaurant)
+        cell.hydrate(restaurant)
 
         return cell
     }

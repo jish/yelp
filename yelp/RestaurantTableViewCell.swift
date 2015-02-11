@@ -11,6 +11,7 @@ import UIKit
 class RestaurantTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var photoView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +24,9 @@ class RestaurantTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setRestaurant(restaurant: Restaurant) {
+    func hydrate(restaurant: Restaurant) {
         titleLabel.text = restaurant.name
+        photoView.setImageWithURL(restaurant.imageUrl)
     }
     
 }
