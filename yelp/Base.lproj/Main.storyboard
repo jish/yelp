@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="126" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cEn-iA-1nM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cEn-iA-1nM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="restaurant-cell" rowHeight="126" id="KWx-BR-azJ" customClass="RestaurantTableViewCell" customModule="yelp" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="restaurant-cell" rowHeight="132" id="KWx-BR-azJ" customClass="RestaurantTableViewCell" customModule="yelp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KWx-BR-azJ" id="cqP-TI-na0">
@@ -35,24 +35,53 @@
                                                         <constraint firstAttribute="height" constant="90" id="rEO-et-LfQ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ramen Dojo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3L-DA-zME">
-                                                    <rect key="frame" x="106" y="8" width="206" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" horizontalCompressionResistancePriority="700" text="Ramen Dojo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3L-DA-zME">
+                                                    <rect key="frame" x="106" y="3" width="183" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                    <color key="textColor" red="0.80784313725490198" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zW-ag-Ngr">
+                                                    <rect key="frame" x="297" y="3" width="15" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zoc-kd-YFY">
+                                                    <rect key="frame" x="107" y="39" width="84" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="84" id="WjD-GN-Cbx"/>
+                                                        <constraint firstAttribute="height" constant="17" id="qO0-Cn-ABl"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1031 Irving St" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fc-4d-iG8">
+                                                    <rect key="frame" x="106" y="60" width="206" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="V3L-DA-zME" firstAttribute="trailing" secondItem="cqP-TI-na0" secondAttribute="trailingMargin" id="H9Z-n8-UXs"/>
+                                                <constraint firstItem="0Fc-4d-iG8" firstAttribute="leading" secondItem="afa-d1-5fT" secondAttribute="trailing" constant="8" id="2Gz-hl-qRW"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Fc-4d-iG8" secondAttribute="trailing" constant="8" id="7z8-Bi-w69"/>
                                                 <constraint firstItem="afa-d1-5fT" firstAttribute="top" secondItem="cqP-TI-na0" secondAttribute="topMargin" id="JKa-BF-eoH"/>
-                                                <constraint firstItem="V3L-DA-zME" firstAttribute="leading" secondItem="afa-d1-5fT" secondAttribute="trailing" constant="8" id="Zum-pK-tNj"/>
+                                                <constraint firstItem="Zoc-kd-YFY" firstAttribute="leading" secondItem="afa-d1-5fT" secondAttribute="trailing" constant="9" id="OZ5-YP-RfR"/>
+                                                <constraint firstItem="6zW-ag-Ngr" firstAttribute="top" secondItem="cqP-TI-na0" secondAttribute="top" constant="3" id="a1B-nb-8Z0"/>
+                                                <constraint firstItem="6zW-ag-Ngr" firstAttribute="leading" secondItem="V3L-DA-zME" secondAttribute="trailing" constant="8" id="k4j-9d-Ubi"/>
+                                                <constraint firstItem="0Fc-4d-iG8" firstAttribute="top" secondItem="Zoc-kd-YFY" secondAttribute="bottom" constant="4" id="ozn-Ld-cGt"/>
+                                                <constraint firstItem="V3L-DA-zME" firstAttribute="top" secondItem="cqP-TI-na0" secondAttribute="top" constant="3" id="pDu-uW-DAf"/>
                                                 <constraint firstItem="afa-d1-5fT" firstAttribute="leading" secondItem="cqP-TI-na0" secondAttribute="leadingMargin" id="q93-nv-kJK"/>
-                                                <constraint firstItem="V3L-DA-zME" firstAttribute="top" secondItem="cqP-TI-na0" secondAttribute="topMargin" id="zde-eA-rDr"/>
+                                                <constraint firstAttribute="trailing" secondItem="6zW-ag-Ngr" secondAttribute="trailing" constant="8" id="qil-09-3XO"/>
+                                                <constraint firstItem="V3L-DA-zME" firstAttribute="leading" secondItem="afa-d1-5fT" secondAttribute="trailing" constant="8" id="vru-R3-78f"/>
+                                                <constraint firstItem="Zoc-kd-YFY" firstAttribute="top" secondItem="V3L-DA-zME" secondAttribute="bottom" constant="4" id="yTn-zs-cPE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="addressLabel" destination="0Fc-4d-iG8" id="RUC-oD-k20"/>
                                             <outlet property="photoView" destination="afa-d1-5fT" id="6MC-sX-shs"/>
+                                            <outlet property="ratingImageView" destination="Zoc-kd-YFY" id="yEg-09-WxE"/>
+                                            <outlet property="ratingLabel" destination="6zW-ag-Ngr" id="X2h-Gc-bWj"/>
                                             <outlet property="titleLabel" destination="V3L-DA-zME" id="6X4-RV-a7s"/>
                                         </connections>
                                     </tableViewCell>
@@ -74,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="362"/>
+            <point key="canvasLocation" x="692" y="357"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e3a-3V-igr">

@@ -12,6 +12,9 @@ class RestaurantTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var ratingImageView: UIImageView!
+    @IBOutlet weak var addressLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +30,11 @@ class RestaurantTableViewCell: UITableViewCell {
     func hydrate(restaurant: Restaurant) {
         titleLabel.text = restaurant.name
         photoView.setImageWithURL(restaurant.imageUrl)
+        ratingLabel.text = "\(restaurant.rating)"
+        ratingImageView.setImageWithURL(restaurant.ratingImgUrl)
+
+        let neighborhoods = "/".join(restaurant.neighborhoods)
+        addressLabel.text = "\(restaurant.address). (\(neighborhoods))"
     }
     
 }

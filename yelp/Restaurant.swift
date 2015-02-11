@@ -9,11 +9,24 @@
 import Foundation
 
 struct Restaurant {
+    let address: String
     let name: String
+    let neighborhoods: [String]
     let imageUrl: NSURL
+    let rating: Int
+    let ratingImgUrl: NSURL
+    let snippet: String
 
     init(dictionary: NSDictionary) {
+        let location = dictionary["location"] as NSDictionary
+
+        address = (location["address"] as Array)[0]
+        neighborhoods = location["neighborhoods"] as Array
+
         name = dictionary["name"] as String
         imageUrl = NSURL(string: dictionary["image_url"] as String)!
+        rating = dictionary["rating"] as Int
+        ratingImgUrl = NSURL(string: dictionary["rating_img_url"] as String)!
+        snippet = dictionary["snippet_text"] as String
     }
 }
