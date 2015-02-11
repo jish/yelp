@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var restaurants: [Restaurant] = []
+
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -17,6 +19,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         tableView.delegate = self
         tableView.dataSource = self
+
+        let yelp = YelpClient()
+        yelp.search("chinese") { (request, responseDict, error) in
+            let businesses = responseDict["businesses"] as NSArray
+
+            println(businesses[0])
+
+            let restaurants = map(businesses) { (business) -> Restaurant in
+                return Restaurant(name: business["name"] as String)
+            }
+
+            self.restaurants = restaurants
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,11 +42,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("restaurant-cell") as RestaurantTableViewCell
+        let restaurant = restaurants[indexPath.row] as Restaurant
+        
+        cell.setRestaurant(restaurant)
+
         return cell
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return restaurants.count
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.preservesSuperviewLayoutMargins = false
+        cell.layoutMargins = UIEdgeInsetsZero
     }
 }
 

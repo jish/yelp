@@ -10,6 +10,8 @@ import UIKit
 
 class RestaurantTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,8 @@ class RestaurantTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func setRestaurant(restaurant: Restaurant) {
+        titleLabel.text = restaurant.name
+    }
+    
 }
