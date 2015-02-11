@@ -2,6 +2,7 @@
 # platform :ios, '6.0'
 
 target 'yelp' do
+  pod 'AFNetworking'
   pod 'BDBOAuth1Manager'
 end
 
