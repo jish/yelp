@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var restaurants: [Restaurant] = []
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var filterBarButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100.0
 
+        var searchBar: UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 260, height: 20))
+        searchBar.placeholder = "Search"
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: searchBar)
+        navigationItem.titleView = searchBar
+
+//        let viewsDict = ["searchBar": searchBar, "filterBarButton": filterBarButton]
+//        var constraints = NSLayoutConstraint.constraintsWithVisualFormat("H:[searchBar]-12-[filterBarButton]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDict)
+//        searchBar.addConstraints(constraints)
+//        filterBarButton.addConstraints(constraints)
+        
         let yelp = YelpClient()
         yelp.search("chinese") { (request, responseDict, error) in
             let businesses = responseDict["businesses"] as NSArray

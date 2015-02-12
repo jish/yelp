@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cEn-iA-1nM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="148" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cEn-iA-1nM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="restaurant-cell" id="KWx-BR-azJ" customClass="RestaurantTableViewCell" customModule="yelp" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="restaurant-cell" rowHeight="148" id="KWx-BR-azJ" customClass="RestaurantTableViewCell" customModule="yelp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KWx-BR-azJ" id="cqP-TI-na0">
@@ -37,7 +37,6 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="200" verticalHuggingPriority="300" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="800" text="Ramen Dojo" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3L-DA-zME">
                                                     <rect key="frame" x="106" y="3" width="183" height="32"/>
-                                                    <color key="backgroundColor" red="0.38972970620000003" green="1" blue="0.4098895629" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <color key="textColor" red="0.80784313725490198" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -57,13 +56,12 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="350" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" text="1031 Irving St" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fc-4d-iG8">
                                                     <rect key="frame" x="106" y="60" width="206" height="21"/>
-                                                    <color key="backgroundColor" red="0.38972970620000003" green="1" blue="0.4098895629" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Chinese" lineBreakMode="wordWrap" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78u-Fl-f07">
-                                                    <rect key="frame" x="106" y="89" width="206" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chinese" lineBreakMode="wordWrap" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78u-Fl-f07">
+                                                    <rect key="frame" x="106" y="85" width="206" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -109,14 +107,40 @@
                             <constraint firstItem="cEn-iA-1nM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="w0x-pL-xRr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="YNe-Wa-Zv7"/>
+                    <navigationItem key="navigationItem" id="YNe-Wa-Zv7">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="Z0I-Hb-kfS">
+                            <connections>
+                                <segue destination="cG3-hX-bFs" kind="push" id="oVB-bt-GPf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="filterBarButton" destination="Z0I-Hb-kfS" id="M00-nK-f08"/>
                         <outlet property="tableView" destination="cEn-iA-1nM" id="hZn-nL-cRU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="868" y="362"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8HM-p3-leH">
+            <objects>
+                <viewController id="cG3-hX-bFs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CLY-Yj-t2q"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Lx-Sm-9kh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lZB-r9-iAC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7of-NB-GLb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nst-7x-d8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322" y="362"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e3a-3V-igr">
