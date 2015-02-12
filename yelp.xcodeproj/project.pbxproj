@@ -91,16 +91,12 @@
 		034299AD1A89AA45006AA4C3 /* yelp */ = {
 			isa = PBXGroup;
 			children = (
-				034299B01A89AA45006AA4C3 /* AppDelegate.swift */,
-				034299B21A89AA45006AA4C3 /* ViewController.swift */,
 				034299B41A89AA45006AA4C3 /* Main.storyboard */,
-				034299B71A89AA45006AA4C3 /* Images.xcassets */,
-				034299B91A89AA45006AA4C3 /* LaunchScreen.xib */,
-				034299AE1A89AA45006AA4C3 /* Supporting Files */,
+				034299B21A89AA45006AA4C3 /* ViewController.swift */,
 				034299D01A89ADE3006AA4C3 /* RestaurantTableViewCell.swift */,
-				034299D21A89B721006AA4C3 /* yelp-Bridging-Header.h */,
 				034299D51A89B8E5006AA4C3 /* YelpClient.swift */,
 				038086171A89CE23009417ED /* Restaurant.swift */,
+				034299AE1A89AA45006AA4C3 /* Supporting Files */,
 			);
 			path = yelp;
 			sourceTree = "<group>";
@@ -108,6 +104,10 @@
 		034299AE1A89AA45006AA4C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				034299D21A89B721006AA4C3 /* yelp-Bridging-Header.h */,
+				034299B91A89AA45006AA4C3 /* LaunchScreen.xib */,
+				034299B71A89AA45006AA4C3 /* Images.xcassets */,
+				034299B01A89AA45006AA4C3 /* AppDelegate.swift */,
 				034299AF1A89AA45006AA4C3 /* Info.plist */,
 			);
 			name = "Supporting Files";

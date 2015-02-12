@@ -32,7 +32,7 @@ class RestaurantTableViewCell: UITableViewCell {
         photoView.setImageWithURL(restaurant.imageUrl)
         ratingLabel.text = "\(restaurant.rating)"
         ratingImageView.setImageWithURL(restaurant.ratingImgUrl)
-
+        
         let neighborhoods = "/".join(restaurant.neighborhoods)
         addressLabel.text = "\(restaurant.address). (\(neighborhoods))"
     }
