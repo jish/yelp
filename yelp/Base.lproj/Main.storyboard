@@ -47,20 +47,20 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zoc-kd-YFY">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zoc-kd-YFY">
                                                     <rect key="frame" x="107" y="39" width="84" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="84" id="WjD-GN-Cbx"/>
                                                         <constraint firstAttribute="height" constant="17" id="qO0-Cn-ABl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="350" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" text="1031 Irving St" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fc-4d-iG8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="275" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" text="1031 Irving St" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fc-4d-iG8">
                                                     <rect key="frame" x="106" y="60" width="206" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chinese" lineBreakMode="wordWrap" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78u-Fl-f07">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="300" text="Chinese" lineBreakMode="wordWrap" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78u-Fl-f07">
                                                     <rect key="frame" x="106" y="85" width="206" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,13 +68,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="0Fc-4d-iG8" firstAttribute="leading" secondItem="afa-d1-5fT" secondAttribute="trailing" constant="8" id="2Gz-hl-qRW"/>
+                                                <constraint firstItem="0Fc-4d-iG8" firstAttribute="leading" secondItem="Zoc-kd-YFY" secondAttribute="leading" id="2my-iK-dwu"/>
                                                 <constraint firstAttribute="trailing" secondItem="0Fc-4d-iG8" secondAttribute="trailing" constant="8" id="7z8-Bi-w69"/>
                                                 <constraint firstAttribute="trailing" secondItem="78u-Fl-f07" secondAttribute="trailing" constant="8" id="DxY-GL-8WZ"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="afa-d1-5fT" secondAttribute="bottom" constant="8" id="IuT-X2-lDI"/>
                                                 <constraint firstItem="afa-d1-5fT" firstAttribute="top" secondItem="cqP-TI-na0" secondAttribute="topMargin" id="JKa-BF-eoH"/>
-                                                <constraint firstItem="78u-Fl-f07" firstAttribute="leading" secondItem="afa-d1-5fT" secondAttribute="trailing" constant="8" id="KBK-Fw-ntQ"/>
-                                                <constraint firstItem="Zoc-kd-YFY" firstAttribute="leading" secondItem="afa-d1-5fT" secondAttribute="trailing" constant="9" id="OZ5-YP-RfR"/>
                                                 <constraint firstItem="6zW-ag-Ngr" firstAttribute="top" secondItem="cqP-TI-na0" secondAttribute="top" constant="3" id="a1B-nb-8Z0"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="78u-Fl-f07" secondAttribute="bottom" constant="8" id="iSn-gU-pS2"/>
                                                 <constraint firstItem="6zW-ag-Ngr" firstAttribute="leading" secondItem="V3L-DA-zME" secondAttribute="trailing" constant="8" id="k4j-9d-Ubi"/>
@@ -82,6 +80,8 @@
                                                 <constraint firstItem="V3L-DA-zME" firstAttribute="top" secondItem="cqP-TI-na0" secondAttribute="top" constant="3" id="pDu-uW-DAf"/>
                                                 <constraint firstItem="afa-d1-5fT" firstAttribute="leading" secondItem="cqP-TI-na0" secondAttribute="leadingMargin" id="q93-nv-kJK"/>
                                                 <constraint firstAttribute="trailing" secondItem="6zW-ag-Ngr" secondAttribute="trailing" constant="8" id="qil-09-3XO"/>
+                                                <constraint firstItem="Zoc-kd-YFY" firstAttribute="leading" secondItem="V3L-DA-zME" secondAttribute="leading" id="sAq-Jx-7ld"/>
+                                                <constraint firstItem="78u-Fl-f07" firstAttribute="leading" secondItem="0Fc-4d-iG8" secondAttribute="leading" id="stR-AP-K38"/>
                                                 <constraint firstItem="V3L-DA-zME" firstAttribute="leading" secondItem="afa-d1-5fT" secondAttribute="trailing" constant="8" id="vru-R3-78f"/>
                                                 <constraint firstItem="78u-Fl-f07" firstAttribute="top" secondItem="0Fc-4d-iG8" secondAttribute="bottom" constant="4" id="yAL-vC-4sg"/>
                                                 <constraint firstItem="Zoc-kd-YFY" firstAttribute="top" secondItem="V3L-DA-zME" secondAttribute="bottom" constant="4" id="yTn-zs-cPE"/>
