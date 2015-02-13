@@ -15,6 +15,8 @@
 		034299C71A89AA45006AA4C3 /* yelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034299C61A89AA45006AA4C3 /* yelpTests.swift */; };
 		034299D11A89ADE3006AA4C3 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034299D01A89ADE3006AA4C3 /* RestaurantTableViewCell.swift */; };
 		034299D61A89B8E5006AA4C3 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034299D51A89B8E5006AA4C3 /* YelpClient.swift */; };
+		0353FB171A8DB2CB00BAA986 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353FB161A8DB2CB00BAA986 /* FilterViewController.swift */; };
+		0353FB191A8DB33000BAA986 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353FB181A8DB33000BAA986 /* FilterTableViewCell.swift */; };
 		038086181A89CE23009417ED /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038086171A89CE23009417ED /* Restaurant.swift */; };
 		EED45C7B5232ED35A86AB214 /* libPods-yelp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B136282E5587A3ECDE9F25 /* libPods-yelp.a */; };
 /* End PBXBuildFile section */
@@ -43,6 +45,8 @@
 		034299D01A89ADE3006AA4C3 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		034299D21A89B721006AA4C3 /* yelp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yelp-Bridging-Header.h"; sourceTree = "<group>"; };
 		034299D51A89B8E5006AA4C3 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
+		0353FB161A8DB2CB00BAA986 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		0353FB181A8DB33000BAA986 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		038086171A89CE23009417ED /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		211F0B7D76A021566BECA848 /* Pods-yelp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yelp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yelp/Pods-yelp.debug.xcconfig"; sourceTree = "<group>"; };
 		B8B136282E5587A3ECDE9F25 /* libPods-yelp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yelp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +97,9 @@
 			children = (
 				034299B41A89AA45006AA4C3 /* Main.storyboard */,
 				034299B21A89AA45006AA4C3 /* ViewController.swift */,
+				0353FB161A8DB2CB00BAA986 /* FilterViewController.swift */,
 				034299D01A89ADE3006AA4C3 /* RestaurantTableViewCell.swift */,
+				0353FB181A8DB33000BAA986 /* FilterTableViewCell.swift */,
 				034299D51A89B8E5006AA4C3 /* YelpClient.swift */,
 				038086171A89CE23009417ED /* Restaurant.swift */,
 				034299AE1A89AA45006AA4C3 /* Supporting Files */,
@@ -282,10 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0353FB171A8DB2CB00BAA986 /* FilterViewController.swift in Sources */,
 				038086181A89CE23009417ED /* Restaurant.swift in Sources */,
 				034299D61A89B8E5006AA4C3 /* YelpClient.swift in Sources */,
 				034299B31A89AA45006AA4C3 /* ViewController.swift in Sources */,
 				034299D11A89ADE3006AA4C3 /* RestaurantTableViewCell.swift in Sources */,
+				0353FB191A8DB33000BAA986 /* FilterTableViewCell.swift in Sources */,
 				034299B11A89AA45006AA4C3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
