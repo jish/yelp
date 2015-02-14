@@ -10,6 +10,7 @@ import Foundation
 
 struct Restaurant {
     let address: String
+    let categories: [String]
     let name: String
     let neighborhoods: [String]
     let imageUrl: NSURL
@@ -19,6 +20,15 @@ struct Restaurant {
 
     init(dictionary: NSDictionary) {
         let location = dictionary["location"] as NSDictionary
+
+        if let categoriesList = dictionary["categories"] as? NSArray {
+            categories = map(categoriesList) { (x: AnyObject) -> String in
+                return x[0] as String
+            }
+        } else {
+            categories = []
+        }
+
 
         address = (location["address"] as Array)[0]
         neighborhoods = location["neighborhoods"] as Array

@@ -15,6 +15,7 @@ class RestaurantTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var ratingImageView: UIImageView!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var categoriesLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,5 +37,9 @@ class RestaurantTableViewCell: UITableViewCell {
         
         let neighborhoods = "/".join(restaurant.neighborhoods)
         addressLabel.text = "\(restaurant.address). (\(neighborhoods))"
+        categoriesLabel.text = ", ".join(restaurant.categories)
+
+        titleLabel.preferredMaxLayoutWidth = titleLabel.frame.size.width
+        addressLabel.preferredMaxLayoutWidth = addressLabel.frame.size.width
     }
 }

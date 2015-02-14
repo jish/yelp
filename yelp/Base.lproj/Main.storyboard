@@ -57,10 +57,10 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="275" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" text="1031 Irving St" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fc-4d-iG8">
                                                     <rect key="frame" x="106" y="60" width="206" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="300" text="Chinese" lineBreakMode="wordWrap" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78u-Fl-f07">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="300" text="Chinese" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78u-Fl-f07">
                                                     <rect key="frame" x="106" y="85" width="206" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,6 +90,7 @@
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="0Fc-4d-iG8" id="RUC-oD-k20"/>
+                                            <outlet property="categoriesLabel" destination="78u-Fl-f07" id="rqE-F1-K3A"/>
                                             <outlet property="photoView" destination="afa-d1-5fT" id="6MC-sX-shs"/>
                                             <outlet property="ratingImageView" destination="Zoc-kd-YFY" id="yEg-09-WxE"/>
                                             <outlet property="ratingLabel" destination="6zW-ag-Ngr" id="X2h-Gc-bWj"/>
@@ -186,19 +187,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7of-NB-GLb">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="psu-y0-shC">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="b8T-Zl-sTX">
+                        <barButtonItem key="rightBarButtonItem" id="psu-y0-shC">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="b8T-Zl-sTX">
                                 <rect key="frame" x="-23" y="-15" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Apply">
-                                            <attributes>
-                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="onApplyButtonPressed:" destination="cG3-hX-bFs" eventType="touchUpInside" id="QpP-Bc-qlw"/>
                                 </connections>
