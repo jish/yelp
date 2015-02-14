@@ -100,12 +100,16 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="cEn-iA-1nM" secondAttribute="trailing" constant="-16" id="N97-yc-oZC"/>
                             <constraint firstItem="cEn-iA-1nM" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="v8n-sj-BwZ"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="cEn-iA-1nM" secondAttribute="bottom" id="vJQ-9p-62n"/>
                             <constraint firstItem="cEn-iA-1nM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="w0x-pL-xRr"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Z3e-NN-41s" appends="YES" id="BBK-HC-P2y"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="YNe-Wa-Zv7">
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="Z0I-Hb-kfS">
@@ -120,6 +124,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Z3e-NN-41s">
+                    <connections>
+                        <action selector="onTap:" destination="vXZ-lx-hvc" id="MjM-s1-szy"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="868" y="362"/>
         </scene>

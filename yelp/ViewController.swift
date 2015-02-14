@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FilterViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FilterViewDelegate, UISearchBarDelegate {
 
     var restaurants: [Restaurant] = []
+    var searchBar: UISearchBar!
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterBarButton: UIBarButtonItem!
@@ -23,11 +24,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100.0
 
-        var searchBar: UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 260, height: 20))
+        searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 260, height: 20))
         searchBar.placeholder = "Search"
-
+        searchBar.delegate = self
         navigationItem.titleView = searchBar
-        
+
         search()
     }
 
@@ -59,13 +60,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         search()
     }
 
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        search()
+    }
+
+    @IBAction func onTap(sender: AnyObject) {
+        println("tap")
+        searchBar.endEditing(true)
+    }
+
     func search() {
-        let query = "restaurants"
+        var query = searchBar.text
         let yelp = YelpClient()
+
+        if query == "" {
+            println("You didn't type anything")
+            query = "restaurants"
+        } else {
+            println("Searching for \(query)")
+        }
 
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
 
-        yelp.search("restaurants") { (request, responseDict, error) in
+        yelp.search(query) { (request, responseDict, error) in
             let businesses = responseDict["businesses"] as NSArray
 
             println(businesses[0])
@@ -83,6 +101,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let controller = segue.destinationViewController as FilterViewController
         controller.delegate = self
+        searchBar.endEditing(true)
     }
 
 }
