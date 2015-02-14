@@ -63,10 +63,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let query = "restaurants"
         let yelp = YelpClient()
 
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         yelp.search("restaurants") { (request, responseDict, error) in
             let businesses = responseDict["businesses"] as NSArray
 
             println(businesses[0])
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
 
             let restaurants = map(businesses) { (business) -> Restaurant in
                 return Restaurant(dictionary: business as NSDictionary)

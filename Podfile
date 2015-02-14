@@ -4,6 +4,7 @@
 target 'yelp' do
   pod 'AFNetworking'
   pod 'BDBOAuth1Manager'
+  pod 'MBProgressHUD'
 end
 
 target 'yelpTests' do
