@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FilterViewDelegate {
 
     var restaurants: [Restaurant] = []
 
@@ -25,21 +25,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         var searchBar: UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 260, height: 20))
         searchBar.placeholder = "Search"
+
         navigationItem.titleView = searchBar
         
-        let yelp = YelpClient()
-        yelp.search("chinese") { (request, responseDict, error) in
-            let businesses = responseDict["businesses"] as NSArray
-
-            println(businesses[0])
-
-            let restaurants = map(businesses) { (business) -> Restaurant in
-                return Restaurant(dictionary: business as NSDictionary)
-            }
-
-            self.restaurants = restaurants
-            self.tableView.reloadData()
-        }
+        search()
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,5 +53,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.preservesSuperviewLayoutMargins = false
         cell.layoutMargins = UIEdgeInsetsZero
     }
+
+    func filtersChanged(dict: NSDictionary) {
+        println("RootViewController#filtersChanged")
+        search()
+    }
+
+    func search() {
+        let query = "restaurants"
+        let yelp = YelpClient()
+
+        yelp.search("restaurants") { (request, responseDict, error) in
+            let businesses = responseDict["businesses"] as NSArray
+
+            println(businesses[0])
+
+            let restaurants = map(businesses) { (business) -> Restaurant in
+                return Restaurant(dictionary: business as NSDictionary)
+            }
+
+            self.restaurants = restaurants
+            self.tableView.reloadData()
+        }
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let controller = segue.destinationViewController as FilterViewController
+        controller.delegate = self
+    }
+
 }
 

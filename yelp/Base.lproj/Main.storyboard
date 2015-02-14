@@ -176,7 +176,26 @@
                             <constraint firstItem="9Lx-Sm-9kh" firstAttribute="top" secondItem="WKo-D7-idT" secondAttribute="bottom" id="zzb-28-HM2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7of-NB-GLb"/>
+                    <navigationItem key="navigationItem" id="7of-NB-GLb">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="psu-y0-shC">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="b8T-Zl-sTX">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Apply">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="onApplyButtonPressed:" destination="cG3-hX-bFs" eventType="touchUpInside" id="QpP-Bc-qlw"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="WKo-D7-idT" id="VUY-eW-Yo0"/>
                     </connections>

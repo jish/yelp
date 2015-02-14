@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol FilterViewDelegate {
+    func filtersChanged(dict: NSDictionary)
+}
+
 class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var filters: [Bool] = [true, false, true]
+    var delegate: FilterViewDelegate!
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -40,6 +45,13 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.preservesSuperviewLayoutMargins = false
         cell.layoutMargins = UIEdgeInsetsZero
+    }
+
+    @IBAction func onApplyButtonPressed(sender: AnyObject) {
+        println("Apply button pressed")
+        println(delegate)
+        navigationController?.popViewControllerAnimated(true)
+        delegate.filtersChanged([:])
     }
 
     /*
