@@ -12,10 +12,23 @@ protocol FilterViewDelegate {
     func filtersChanged(dict: NSDictionary)
 }
 
-class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+struct Category {
+    let title: String
+    let key: String
+    var on: Bool
+}
 
-    var filters: [Bool] = [true, false, true]
+class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FilterCellDelegate {
+
     var delegate: FilterViewDelegate!
+    var categories: [Category] = [
+        Category(title: "Chinese", key: "chinese", on: false),
+        Category(title: "Italian", key: "italian", on: false),
+        Category(title: "Japanese", key: "japanese", on: false),
+        Category(title: "Mexican", key: "mexican", on: false),
+        Category(title: "Thai", key: "thai", on: false)
+    ]
+    var settings: [String: [String]] = [:]
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -26,6 +39,10 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 50
+
+        settings["categories"] = []
+
+        println("View did load")
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,13 +50,24 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillAppear(animated: Bool) {
+        for category in categories {
+            println("\(category.title) is \(category.on)")
+        }
+    }
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("filter-cell") as FilterTableViewCell
+        let category = categories[indexPath.row]
+
+        println("Hydrating cell \(indexPath.row) with \(category.on)")
+        cell.hydrate(category, delegate: self, index: indexPath.row)
+
         return cell
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filters.count
+        return categories.count
     }
 
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -51,7 +79,27 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         println("Apply button pressed")
         println(delegate)
         navigationController?.popViewControllerAnimated(true)
-        delegate.filtersChanged([:])
+
+        var array: [String] = []
+        settings["categories"] = []
+        for category in categories {
+            if category.on {
+                array.insert(category.key, atIndex: array.count)
+            }
+        }
+
+        settings["categories"] = array
+
+        delegate.filtersChanged(settings)
+    }
+
+    func categoryChanged(index: Int, on: Bool) {
+        println("Controller category \(index) changed to: \(on)")
+        categories[index].on = on
+
+        for category in categories {
+            println("\(category.title) is \(category.on)")
+        }
     }
 
     /*

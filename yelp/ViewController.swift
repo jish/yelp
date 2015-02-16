@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     var restaurants: [Restaurant] = []
     var searchBar: UISearchBar!
+    var options: NSDictionary = [:]
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterBarButton: UIBarButtonItem!
@@ -57,6 +58,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func filtersChanged(dict: NSDictionary) {
         println("RootViewController#filtersChanged")
+        println(dict)
+        options = dict
         search()
     }
 
@@ -82,8 +85,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
 
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        println("Searching")
 
-        yelp.search(query) { (request, responseDict, error) in
+        yelp.search(query, options: options) { (request, responseDict, error) in
             let businesses = responseDict["businesses"] as NSArray
 
             println(businesses[0])
