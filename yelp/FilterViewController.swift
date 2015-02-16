@@ -38,6 +38,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var radiusControl: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +127,10 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         settings["sort"] = row
+    }
+
+    @IBAction func radiusDidChange(sender: UISegmentedControl) {
+        settings["radius"] = (sender.selectedSegmentIndex + 1) * 5 * 1000
     }
     /*
     // MARK: - Navigation

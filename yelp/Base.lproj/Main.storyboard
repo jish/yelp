@@ -152,7 +152,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WKo-D7-idT">
-                                <rect key="frame" x="0.0" y="109" width="320" height="230"/>
+                                <rect key="frame" x="0.0" y="105" width="320" height="230"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="eEp-mX-Wuh"/>
@@ -194,27 +194,50 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlT-9j-TL3">
-                                <rect key="frame" x="16" y="347" width="46" height="29"/>
+                                <rect key="frame" x="16" y="339" width="46" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZw-CF-geU">
-                                <rect key="frame" x="0.0" y="328" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="312" width="320" height="162"/>
                             </pickerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MeX-QT-nV7">
+                                <rect key="frame" x="16" y="526" width="288" height="29"/>
+                                <segments>
+                                    <segment title="5"/>
+                                    <segment title="10"/>
+                                    <segment title="15"/>
+                                    <segment title="20"/>
+                                </segments>
+                                <connections>
+                                    <action selector="radiusDidChange:" destination="cG3-hX-bFs" eventType="valueChanged" id="6Gx-YT-f7s"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius (Kilometers)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yj0-b5-Avv">
+                                <rect key="frame" x="16" y="493" width="215" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SZw-CF-geU" firstAttribute="top" secondItem="TlT-9j-TL3" secondAttribute="bottom" constant="-48" id="Bv6-gp-QOL"/>
+                            <constraint firstItem="MeX-QT-nV7" firstAttribute="leading" secondItem="lZB-r9-iAC" secondAttribute="leadingMargin" id="0A7-Cz-M0q"/>
+                            <constraint firstItem="SZw-CF-geU" firstAttribute="top" secondItem="TlT-9j-TL3" secondAttribute="bottom" constant="-56" id="Bv6-gp-QOL"/>
                             <constraint firstItem="WKo-D7-idT" firstAttribute="leading" secondItem="lZB-r9-iAC" secondAttribute="leadingMargin" constant="-16" id="CDg-4P-EmH"/>
                             <constraint firstItem="kqd-vE-RG3" firstAttribute="leading" secondItem="lZB-r9-iAC" secondAttribute="leadingMargin" id="Dex-cj-jcm"/>
-                            <constraint firstItem="TlT-9j-TL3" firstAttribute="top" secondItem="WKo-D7-idT" secondAttribute="bottom" constant="8" id="Ii8-49-BxX"/>
+                            <constraint firstItem="MeX-QT-nV7" firstAttribute="trailing" secondItem="lZB-r9-iAC" secondAttribute="trailingMargin" id="Eqa-z8-3CM"/>
+                            <constraint firstItem="TlT-9j-TL3" firstAttribute="top" secondItem="WKo-D7-idT" secondAttribute="bottom" constant="4" id="Ii8-49-BxX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SZw-CF-geU" secondAttribute="trailing" constant="-16" id="Mpc-WQ-2EY"/>
+                            <constraint firstItem="yj0-b5-Avv" firstAttribute="top" secondItem="TlT-9j-TL3" secondAttribute="bottom" constant="125" id="Pe9-LI-Yij"/>
+                            <constraint firstItem="yj0-b5-Avv" firstAttribute="leading" secondItem="lZB-r9-iAC" secondAttribute="leadingMargin" id="QUF-jF-dk7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WKo-D7-idT" secondAttribute="trailing" constant="-16" id="Rjw-jF-crg"/>
                             <constraint firstItem="TlT-9j-TL3" firstAttribute="leading" secondItem="lZB-r9-iAC" secondAttribute="leadingMargin" id="Wnb-pN-OnQ"/>
+                            <constraint firstItem="MeX-QT-nV7" firstAttribute="top" secondItem="yj0-b5-Avv" secondAttribute="bottom" constant="4" id="k5q-Bk-8Oe"/>
                             <constraint firstItem="SZw-CF-geU" firstAttribute="leading" secondItem="lZB-r9-iAC" secondAttribute="leadingMargin" constant="-16" id="x8Y-2b-aMz"/>
                             <constraint firstItem="kqd-vE-RG3" firstAttribute="top" secondItem="CLY-Yj-t2q" secondAttribute="bottom" constant="8" id="xpj-UV-LiT"/>
-                            <constraint firstItem="WKo-D7-idT" firstAttribute="top" secondItem="kqd-vE-RG3" secondAttribute="bottom" constant="8" id="zBY-Fd-YXm"/>
+                            <constraint firstItem="WKo-D7-idT" firstAttribute="top" secondItem="kqd-vE-RG3" secondAttribute="bottom" constant="4" id="zBY-Fd-YXm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7of-NB-GLb">
@@ -232,6 +255,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="pickerView" destination="SZw-CF-geU" id="rU9-We-nIB"/>
+                        <outlet property="radiusControl" destination="MeX-QT-nV7" id="Jzs-IS-uG2"/>
                         <outlet property="tableView" destination="WKo-D7-idT" id="VUY-eW-Yo0"/>
                     </connections>
                 </viewController>

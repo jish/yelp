@@ -46,6 +46,10 @@ class YelpClient: BDBOAuth1RequestOperationManager {
         if let sort = options["sort"] as? Int {
             parameters["sort"] = String(sort)
         }
+        
+        if let radius = options["radius"] as? Int {
+            parameters["radius_filter"] = String(radius)
+        }
 
         println(parameters)
 

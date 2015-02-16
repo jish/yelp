@@ -29,7 +29,6 @@ struct Restaurant {
             categories = []
         }
 
-
         address = (location["address"] as Array)[0]
         neighborhoods = location["neighborhoods"] as Array
 
