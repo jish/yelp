@@ -145,11 +145,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="142" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WKo-D7-idT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqd-vE-RG3">
+                                <rect key="frame" x="16" y="72" width="101" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WKo-D7-idT">
+                                <rect key="frame" x="0.0" y="109" width="320" height="230"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="eEp-mX-Wuh"/>
+                                </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="filter-cell" rowHeight="142" id="cdL-Xz-fAq" customClass="FilterTableViewCell" customModule="yelp" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="filter-cell" rowHeight="53" id="cdL-Xz-fAq" customClass="FilterTableViewCell" customModule="yelp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cdL-Xz-fAq" id="Urx-yG-lVg">
@@ -184,13 +193,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlT-9j-TL3">
+                                <rect key="frame" x="16" y="347" width="46" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZw-CF-geU">
+                                <rect key="frame" x="0.0" y="328" width="320" height="162"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SZw-CF-geU" firstAttribute="top" secondItem="TlT-9j-TL3" secondAttribute="bottom" constant="-48" id="Bv6-gp-QOL"/>
                             <constraint firstItem="WKo-D7-idT" firstAttribute="leading" secondItem="lZB-r9-iAC" secondAttribute="leadingMargin" constant="-16" id="CDg-4P-EmH"/>
+                            <constraint firstItem="kqd-vE-RG3" firstAttribute="leading" secondItem="lZB-r9-iAC" secondAttribute="leadingMargin" id="Dex-cj-jcm"/>
+                            <constraint firstItem="TlT-9j-TL3" firstAttribute="top" secondItem="WKo-D7-idT" secondAttribute="bottom" constant="8" id="Ii8-49-BxX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SZw-CF-geU" secondAttribute="trailing" constant="-16" id="Mpc-WQ-2EY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WKo-D7-idT" secondAttribute="trailing" constant="-16" id="Rjw-jF-crg"/>
-                            <constraint firstItem="WKo-D7-idT" firstAttribute="top" secondItem="lZB-r9-iAC" secondAttribute="topMargin" id="XZ0-u0-eti"/>
-                            <constraint firstItem="9Lx-Sm-9kh" firstAttribute="top" secondItem="WKo-D7-idT" secondAttribute="bottom" id="zzb-28-HM2"/>
+                            <constraint firstItem="TlT-9j-TL3" firstAttribute="leading" secondItem="lZB-r9-iAC" secondAttribute="leadingMargin" id="Wnb-pN-OnQ"/>
+                            <constraint firstItem="SZw-CF-geU" firstAttribute="leading" secondItem="lZB-r9-iAC" secondAttribute="leadingMargin" constant="-16" id="x8Y-2b-aMz"/>
+                            <constraint firstItem="kqd-vE-RG3" firstAttribute="top" secondItem="CLY-Yj-t2q" secondAttribute="bottom" constant="8" id="xpj-UV-LiT"/>
+                            <constraint firstItem="WKo-D7-idT" firstAttribute="top" secondItem="kqd-vE-RG3" secondAttribute="bottom" constant="8" id="zBY-Fd-YXm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7of-NB-GLb">
@@ -207,6 +231,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="pickerView" destination="SZw-CF-geU" id="rU9-We-nIB"/>
                         <outlet property="tableView" destination="WKo-D7-idT" id="VUY-eW-Yo0"/>
                     </connections>
                 </viewController>

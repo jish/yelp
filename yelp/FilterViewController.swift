@@ -18,7 +18,7 @@ struct Category {
     var on: Bool
 }
 
-class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FilterCellDelegate {
+class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FilterCellDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     var delegate: FilterViewDelegate!
     var categories: [Category] = [
@@ -28,9 +28,16 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         Category(title: "Mexican", key: "mexican", on: false),
         Category(title: "Thai", key: "thai", on: false)
     ]
-    var settings: [String: [String]] = [:]
+    var settings: [String: AnyObject] = [:]
+
+    let pickerData = [
+        "Best matched",
+        "Distance",
+        "Highest rated"
+    ]
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var pickerView: UIPickerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +48,9 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.estimatedRowHeight = 50
 
         settings["categories"] = []
+
+        pickerView.dataSource = self
+        pickerView.delegate = self
 
         println("View did load")
     }
@@ -102,6 +112,21 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return pickerData[row]
+    }
+
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        settings["sort"] = row
+    }
     /*
     // MARK: - Navigation
 

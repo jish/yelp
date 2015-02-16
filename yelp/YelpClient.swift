@@ -32,13 +32,19 @@ class YelpClient: BDBOAuth1RequestOperationManager {
 
     func search(query: String, options: NSDictionary, block: (AFHTTPRequestOperation!, NSDictionary, NSError?) -> Void) {
         var parameters = ["term": query, "location": "San Francisco"]
-        
+
+        println(options)
+
         if let categories = options["categories"] as? [String] {
             if categories.count > 0 {
                 let str = ",".join(categories)
                 println(str)
                 parameters["category_filter"] = str
             }
+        }
+        
+        if let sort = options["sort"] as? Int {
+            parameters["sort"] = String(sort)
         }
 
         println(parameters)
